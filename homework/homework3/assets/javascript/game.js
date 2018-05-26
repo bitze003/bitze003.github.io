@@ -1,5 +1,6 @@
 //Setup
-
+var correctimage = "";
+var correctword = "";
 var anatomyArray = [
     {
         word:"abdominal",
@@ -8,7 +9,7 @@ var anatomyArray = [
 
     {
         word:"cephalic",
-        image1:"assets/images/abdominal.jpg"
+        image1:"assets/images/cephalic.jpg"
     },
     {
         word:"dorsal",
@@ -44,7 +45,7 @@ var anatomyArray = [
    },
 ]
 
-var gameTime = false;
+var gameTime = true;
 
 var randomNumber = Math.floor(Math.random() * anatomyArray.length);
 
@@ -124,6 +125,7 @@ function addIncorrectLetter(guess) {
     }
 }
 
+
 function displayWins() {
     var winsDisplay = document.querySelector("#winsDisplay");
     winsDisplay.textContent = winScore;
@@ -146,7 +148,7 @@ function displayCurrentWord() {
 
 function displayImage() {
     var pictureDisplay = document.querySelector("#pictureDisplay");
-    pictureDisplay.src = image1;
+    pictureDisplay.src = correctimage;
 }
 
 function displayAnswer() {
@@ -167,8 +169,8 @@ function removeCorrect() {
 function init() {
     gameTime = true;
     randomNumber = Math.floor(Math.random() * anatomyArray.length);
-    anatomy = anatomyArray[randomNumber].word;
-    image1 = anatomyArray[randomNumber].image1
+    correctword = anatomyArray[randomNumber].word;
+    correctimage = anatomyArray[randomNumber].image1
     lettersRemaining = anatomy.length;
     answerArray = []; 
     for (var i = 0; i < anatomy.length; i++) {
@@ -187,7 +189,7 @@ incorrectGuessesMade = [];
 displayGuessesMade()
 
 
-displayImage();
+displayImage(anatomyArray[0]);
 
 displayCurrentWord();
 
