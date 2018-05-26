@@ -55,14 +55,7 @@ var remaining = anatomy.length;
 
 var answerArray = [];
 
-//listen
-document.addEventListener("keyup", function(event){
-    if(gameTime) {
-        letterCheck(event);
-    } else {
-        init();
-    }
-});
+
 
 var alphabetArray =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ]
 
@@ -71,7 +64,13 @@ function letterCheck(guess) {
         correctGuessCheck(guess);
     }
 }
-
+document.addEventListener("keydown", function(event){
+    if(gameTime) {
+        letterCheck(event);
+    } else {
+        init();
+    }
+});
         var winScore = 0;
         function correctGuessCheck(guess) {
             if (anatomy.indexOf(guess.Key) > -1) {
@@ -155,7 +154,7 @@ function displayAnswer() {
     revealedAnswerDisplay.textContent = anatomy.toUpperCase();
 }
 
-function addCorrect() {
+function addCorrect()   {
     var currentWordDisplay = document.querySelector("#currentWordDisplay");
     currentWordDisplay.classList.add('correct');
 }
@@ -187,9 +186,10 @@ displayGuessesLeft()
 incorrectGuessesMade = [];
 displayGuessesMade()
 
-displayCurrentWord();
 
 displayImage();
+
+displayCurrentWord();
 
 revealedAnswerDisplay.textContent = "";
 

@@ -18,7 +18,7 @@ section{width:7in;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:25px;
+    
     
 }
 
@@ -53,14 +53,25 @@ p  {font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 
 .bill{height:4in;
     width:6in;
-    margin-top: 25px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     
 
 }
+#perma{
 
+        width:100%;
+        background:#C0C0C0;
+        border:1px;
+        border-color:gray;
+        border-style:solid;
+        text-decoration:none;
+        font-family:Arial;
+        top:auto;
+        top: 0px;
+    
+}
 #word{
     position: absolute;
     width: 30%;
@@ -79,24 +90,24 @@ p  {font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 
 }
 .activeWords {
-    font-size: 1.5em;
-    letter-spacing: 0.3em;
-    color: #777;
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: rgb(100, 68, 68);
     line-height: 25px;
 }
 
 #revealedAnswerDisplay {
-    color: red;
+    color: rgb(175, 133, 18);
     line-height: 25px;
 }
 
 #guessesMadeDisplay {
-    font-size: 0.8em;
+    font-size: 16px;
     line-height: 25px;
 }
 
 .correct {
-    color: green;
+    color: rgb(21, 122, 156);
     font-weight: bold;
 }
 

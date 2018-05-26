@@ -11,22 +11,17 @@
     </head>
 <body background="assets/images/background.jpg">
 
-    <div class="mx-auto jumbotron mainDisplay">
-            <!--Guesses Remaining and Win Counters-->
+<div id="perma">
            <div> <audio id="cowboy" src="assets/Music/cowboy.mp3"></audio> </div>
-            <div class="row">
-              <div class="col-md-6 mr-auto mobileBoard">
-                <p class="ml-2 text-left mobileBoard">Guesses Remaining:
+           
+                <p class="guesser">Guesses Remaining:
                   <span id="guessesLeftDisplay">6</span>
                 </p>
-              </div>
-              <div class="col-md-6 ml-auto mobileBoard">
-                <p class="mr-2 text-right mobileBoard">Wins:
+                <p class="winner">Wins:
                   <span id="winsDisplay">0</span>
                 </p>
-              </div>
-            </div>
 
+</div>
      <header>
         <h1>Anatomy Hangman</h1>
      </header>
@@ -38,8 +33,8 @@
          <p>You start with 6 tokens.</p>
          <p>Use only letters in the English alphabet.</p>
      </section>
-     <img class="bill" src="" id="pictureDisplay" alt="" />
-     <div class="row">
+     <img class="bill" src="" id="pictureDisplay" alt="anatomy" >
+  
 
      <div id="word">
             <h5>Current Word</h5>
