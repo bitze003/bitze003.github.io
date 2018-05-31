@@ -1,16 +1,15 @@
 //Setup
-var correctimage = "";
-var correctword = "";
+document.addEventListener("DOMContentLoaded", function(event){
+
+
+
+
 var anatomyArray = [
     {
         word:"abdominal",
         image1: "assets/images/abdominal.jpg"
     },
 
-    {
-        word:"cephalic",
-        image1:"assets/images/cephalic.jpg"
-    },
     {
         word:"dorsal",
         image1:"assets/images/dorsal.png"
@@ -19,18 +18,7 @@ var anatomyArray = [
         word:"gluteal",
         image1:"assets/images/gluteal.png"
     },
-    {
-        word:"lumbar",
-        image1:"assets/image/lumbar.png"
-    },
-    {
-        word:"orbital",
-        image1:"assets/image/orbital.png"
-    },
-    {
-        word:"palmar",
-        image1:"assets/image/palmar.jpg"
-   },
+
    {
        word:"pedal",
        image1:"assets/images/pedal.png"
@@ -43,9 +31,10 @@ var anatomyArray = [
        word:"vertebral",
        image1:"assets/images/vertebral.jpg"
    },
+
 ]
 
-var gameTime = true;
+var gameTime = false;
 
 var randomNumber = Math.floor(Math.random() * anatomyArray.length);
 
@@ -72,23 +61,49 @@ document.addEventListener("keydown", function(event){
         init();
     }
 });
+
+function displayWins() {
+    var winsDisplay = document.querySelector("#winsDisplay");
+    winsDisplay.textContent = winScore;
+}
+
         var winScore = 0;
         function correctGuessCheck(guess) {
-            if (anatomy.indexOf(guess.Key) > -1) {
+            console.log(guess);
+            if (anatomy.indexOf(guess.key) > -1) {
                 correctGuess(guess);
             } else {
                 incorrectGuess(guess);
             }
         }
-
+        function removeCorrect() {
+            var currentWordDisplay = document.querySelector("#currentWordDisplay");
+            currentWordDisplay.classList.remove('correct');
+        }
 function correctGuess(guess) {
-    if (answerArray.indexOf(guess.key.toUpperCase()) < 0) {
+    if (answerArray.indexOf(guess.key.toUpperCase()) > 0) {
+        console.log(guess);
             addCorrectLetter(guess);
     }
 }
 
-function addCorrectLetter(guess) {  
-    for (var a=0; a < anatomy.length; a++){
+function displayCurrentWord() {
+    var currentWordDisplay = document.querySelector("#currentWordDisplay");
+    currentWordDisplay.innerHTML = answerArray.join(" ");
+}
+
+function displayGuessesMade() {
+    var guessesMadeDisplay = document.querySelector("#guessesMadeDisplay");
+    guessesMadeDisplay.textContent = incorrectGuessesMade.join(", ");
+}
+
+function addCorrect()   {
+    var currentWordDisplay = document.querySelector("#currentWordDisplay");
+    currentWordDisplay.classList.add('correct');
+}
+
+function addCorrectLetter(guess){
+        for (var a=0; a < anatomy.length; a++){
         if (guess.key === anatomy[a]) {
             answerArray[a] = guess.key.toUpperCase();
             displayCurrentWord();
@@ -114,41 +129,45 @@ function incorrectGuess(guess) {
     }
 }
 
+function changeImage() {
+    var pictureDisplay = document.querySelector("#pictureDisplay");
+    pictureDisplay.src = image1;
+    gameStatus = false;
+}
+
 function addIncorrectLetter(guess) {
     incorrectGuessesMade.push(guess.key.toUpperCase());
     displayGuessesMade();
-    guessesLeft--;
+    if (guessesLeft >= 1 ){
+    guessesLeft--;}
     displayGuessesLeft();
     if (guessesLeft === 0) {
         changeImage();
+        
         displayAnswer();
+
+        // init();
+
+        setTimeout(init, 3000);
     }
 }
 
 
-function displayWins() {
-    var winsDisplay = document.querySelector("#winsDisplay");
-    winsDisplay.textContent = winScore;
-}
 
-function displayGuessesMade() {
-    var guessesMadeDisplay = document.querySelector("#guessesMadeDisplay");
-    guessesMadeDisplay.textContent = incorrectGuessesMade.join(", ");
-}
+
 
 function displayGuessesLeft() {
     var guessesLeftDisplay = document.querySelector("#guessesLeftDisplay");
     guessesLeftDisplay.textContent = guessesLeft;
 }
 
-function displayCurrentWord() {
-    var currentWordDisplay = document.querySelector("#currentWordDisplay");
-    currentWordDisplay.innerHTML = answerArray.join(" ");
-}
+
+
 
 function displayImage() {
     var pictureDisplay = document.querySelector("#pictureDisplay");
-    pictureDisplay.src = correctimage;
+    pictureDisplay.src = image1;
+    console.log(image1);
 }
 
 function displayAnswer() {
@@ -156,21 +175,13 @@ function displayAnswer() {
     revealedAnswerDisplay.textContent = anatomy.toUpperCase();
 }
 
-function addCorrect()   {
-    var currentWordDisplay = document.querySelector("#currentWordDisplay");
-    currentWordDisplay.classList.add('correct');
-}
 
-function removeCorrect() {
-    var currentWordDisplay = document.querySelector("#currentWordDisplay");
-    currentWordDisplay.classList.remove('correct');
-}
 
 function init() {
     gameTime = true;
     randomNumber = Math.floor(Math.random() * anatomyArray.length);
-    correctword = anatomyArray[randomNumber].word;
-    correctimage = anatomyArray[randomNumber].image1
+    anatomy = anatomyArray[randomNumber].word;
+    image1 = anatomyArray[randomNumber].image1
     lettersRemaining = anatomy.length;
     answerArray = []; 
     for (var i = 0; i < anatomy.length; i++) {
@@ -181,22 +192,14 @@ function init() {
 }
 
 lettersRemaining = anatomy.length;
-
 guessesLeft = 6;
 displayGuessesLeft()
-
 incorrectGuessesMade = [];
 displayGuessesMade()
-
-
-displayImage(anatomyArray[0]);
-
+displayImage();
 displayCurrentWord();
-
 revealedAnswerDisplay.textContent = "";
-
-
-
 removeCorrect();
 
 }
+});
