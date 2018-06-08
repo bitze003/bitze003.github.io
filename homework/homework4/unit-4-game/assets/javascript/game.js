@@ -83,18 +83,6 @@ $(document).ready(function () {
         $('#yourscore').text(yourTotal);
     }
 
-    // $('#green').on ('click', function(){
-    //     yourTotal = yourTotal + green;
-    //     console.log("New userTotal= " + yourTotal);
-    //     $('#yourscore').text(yourtotal); 
-    //           //sets win/lose conditions
-    //         if (yourtotal == random){
-    //           win();
-    //         }
-    //         else if ( yourTotal > random){
-    //           loss();
-    //         }   
-    //   })  
 
 
 });
