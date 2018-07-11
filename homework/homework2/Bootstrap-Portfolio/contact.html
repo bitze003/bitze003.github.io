@@ -1,273 +1,145 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-    <title>
-        Kenneth Bitzer
-    </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-
-
-/* text area for the message box */
-textarea {
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #ffffff;
-    resize: none;
-}
-
-form {
-    float:left;
-    background-color: #ffffff;
-    padding: 0px 0px 10px 25px;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-size: 16px;
-    width:960px;
-}
-
-
-input, textarea {
-    width: 100%;
-}
-/* the changes to the "submit" button */
-button {   background-color: #4aaaa5;
-    border: none;
-    color: #ffffff;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 5px 25px;
-    cursor: pointer;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    
-}
-header {
-    background-color: #ffffff;
-    width: 100%;
-    height:68px;
-    margin: 0 auto;
-    padding: 0px;
-    ;
-    
-}
-
-
-
-header {
-    background-color: #ffffff;
-    width: 100%;
-    height:68px;
-    margin: 0 auto;
-    padding: 0px;
-    ;
-    
-}
-
-#empty {color:#ffffff;
-    width: 100%;
-    height:70px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-    border-bottom:.02in solid #cccccc;
-}
-h1 {
-    color: #ffffff;
-    background-color: #4aaaa5;
-    float:left;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    width:2.5in;
-    Height:.70in;
-    margin-left:175px;
-
-   
-}
-/*about me header*/ 
-h2{
-    float:left;
-    color: #4aaaa5;
-    background-color: #ffffff;
-    padding: 30px 0 0 20px;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-weight: bold;
-    font-size: 24px;
-    width:960px;
-    border-bottom:.03in solid #dddddd;
-    
-    
-}
-/*links "about contact profile"*/
-
-nav {
-    color:#A19F9F;
-    padding:20px 0 0 0;
-    margin-right: 200px;
-    float: right;
-    font-size: 18px;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-}
-/* visited link */
-a:visited {
-    color: green;
-}
-
-/* mouse over link */
-a:hover {
-    color: hotpink;
-}
-/*navigation for portfolio*/
-#portfolio{color:#A19F9F;
-     float: right;
-    font-size: 18px;
-    border-right: 1px #a19f9f solid;
-
-}
-/*navigation for contact*/
-#contact{color:#A19F9F;
-    float: right;
-    font-size: 18px;
-    border-right: 1px #a19f9f solid;
-}
-/*navigation for about*/
-#index{color:#A19F9F;
-    float: right;
-    font-size: 18px;}
-
-/* section in the body with profile and text */
-#about {
-    margin: 50px auto; 
-    width: 960px; 
-    height:420px;
-    background-color:#ffffff;
-
-}
-
-a {text-decoration: none; 
-    padding: 5px 10px;
-    
-    
-
-} 
-/*paragraph text (about me) */
-
-p  {font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-        color: #777777;
-    line-height: 25px;
-    padding-left: 8px;
-    font-size:18px;
-
-}
-
-
-
-
-/*background image*/
-
-body {   margin: 0;
-         background-image: url(images/basic.png);
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
     }
-
-
-section{height:70%;
-    width: 960px;
-    background-color:#ffffff;
-    margin:auto;
-        
-
-/*bottom banner*/
-}
-
-footer {height:.75in;
-    width:100%;
-    background-color: #666666;
-    position: sticky;
-    bottom: 0px;
-    border-top:.05in solid #4aaaa5;
-}
-.contacter{margin-top:25px
-
-}
-    </style>
-         <body>
     
-    <header>
- <div class="row">
-        <div class="col-lg-12 box">
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
     
-        
-            <h1>Kenneth Bitzer</h1>
-             <div class="col-lg- 9 box">
-                <nav>
-                     <a id=index href="index.html"> About </a>
-                     <a id=portfolio href="portfolio.html"> Portfolio </a>
-                     <a id=contact href="contact.html"> Contact </a>
-                 </nav> 
-            </div>
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
     
-        </div>
+    /* Set black background color, white text and some padding */
+    footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #FFBC93;
+}
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
 
-</div>
- </header>
-
- <div class="container">
-    <div class="row contacter">
-         <div class="col-lg-12">
-                    <h2>Contact</h2>
-
-        
-
-                    <form>
-                            <label for="fname"><p>Name</p></label>
-                            <input type="text" id="fname" name="fname">
-                            
-                    </form>
-                </div>
-            </div>
-
-        <div class="row">
-                <div class="col-lg-12">
-                    <form>
-                            <label for="email"><p>Email</p></label>
-                            <input type="text" id="email" name="email">
-                    </form>
-                </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                    <form>
-                        <p>Message</p>
-                        <textarea></textarea>
-                    </form>
-                    
-            </div>
-        </div>
-      
-    <div class="row">
-        <div class="col-lg-12">
-            <button>Submit</button>
-        </div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="index.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <form>
+    <h2>Contact</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="first">First Name</label>
+          <input type="text" class="form-control" placeholder="" id="first">
+        </div>
+      </div>
+      <!--  col-md-6   -->
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="last">Last Name</label>
+          <input type="text" class="form-control" placeholder="" id="last">
+        </div>
+      </div>
+      <!--  col-md-6   -->
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" class="form-control" placeholder="" id="company">
+        </div>
+
+      </div>
+      <!--  col-md-6   -->
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" placeholder="phone">
+        </div>
+      </div>
+      <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="email">
+        </div>
+      </div>
+      <!--  col-md-6   -->
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="url">Your Website <small>Please include http://</small></label>
+          <input type="url" class="form-control" id="url" placeholder="url">
+        </div>
+      </div>
+      <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 
 
-<footer>
-</footer> 
+<footer class="container-fluid text-center">
+      <p style="size:10px;">&#169; Copyright, 2018, Kenneth Bitzer</p>
+</footer>
 
-</body>    
 
-
+</body>
 </html>
