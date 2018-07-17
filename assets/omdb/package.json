@@ -1,0 +1,22 @@
+{
+  "name": "omdb",
+  "version": "1.0.0",
+  "description": "show and actors requests",
+  "main": "omdb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "requests",
+    "to",
+    "get",
+    "ratings",
+    "n",
+    "things"
+  ],
+  "author": "Kenneth Bitzer",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}

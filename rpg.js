@@ -1,3 +1,4 @@
+
 function Character(name, profession, gender, age, strength, hitpoints){
     this.name = name;
     this.profession = profession;
