@@ -1,0 +1,19 @@
+{
+  "name": "activity",
+  "version": "1.0.0",
+  "description": "ebay",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ebay"
+  ],
+  "author": "Kenneth Bitzer",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "sql": "^0.78.0"
+  },
+  "devDependencies": {}
+}

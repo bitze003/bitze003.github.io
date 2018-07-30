@@ -1,0 +1,19 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "omdbjn.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "mysql": "^2.16.0",
+    "request": "^2.87.0",
+    "save": "^2.3.2",
+    "sql": "^0.78.0"
+  }
+}
