@@ -1,13 +1,12 @@
 # bamazon
 <h1>homework10
 Bamazon</h1>
-Storefront app with functionality for customers to buy products, managers to view products and add inventory, and supervisors to view total profits.
+Storefront app with functionality for customers to buy products.
 
 <h3>Technologies</h3>
 Node.js, MySQL, Javascript
 
 <h3>Built with</h3>
-Sublime Text - Text editor
 Javascript
 Node.js - Backend
 GitHub - Cloud-based storage and version control
@@ -32,3 +31,7 @@ Enter "node bamazonCustomer.js" into the command line
 Follow the prompts to buy products
 Manager App
 Managers have four options, to view products for sale, view products with low inventory, add stock to a product, and add new products to be sold
+
+<h3>A video of the running application</h3>
+
+https://drive.google.com/file/d/1lehVwI6cjitrPWEHFrSRnecIT0Y9Mric/view
